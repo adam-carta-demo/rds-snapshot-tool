@@ -76,6 +76,10 @@ def lambda_handler(event, context):
                     Tags=[{'Key': 'CreatedBy', 'Value': 'Snapshot Tool for RDS'}, {
                         'Key': 'CreatedOn', 'Value': timestamp_format}, {'Key': 'shareAndCopy', 'Value': 'YES'}]
                 )
+
+                logger.info('Snapshot of %s has been created: %s' %
+                            db_instance['DBInstanceIdentifier'], response['DBSnapshot']['DBSnapshotIdentifier'])
+
             except Exception:
                 pending_backups += 1
         else:
