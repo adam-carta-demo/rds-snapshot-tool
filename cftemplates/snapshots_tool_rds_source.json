@@ -17,7 +17,7 @@
 			"Description": "Interval for backups in hours. Default is 24"
 		},
 		"DestinationAccount": {
-			"Type": "Number",
+			"Type": "String",
 			"Default": "000000000000",
 			"Description": "Destination account with no dashes."
 		},
