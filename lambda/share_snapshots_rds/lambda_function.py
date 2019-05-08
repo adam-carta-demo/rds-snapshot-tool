@@ -22,7 +22,7 @@ from snapshots_tool_utils import *
 
 # Initialize from environment variable
 LOGLEVEL = os.getenv('LOG_LEVEL', 'ERROR').strip()
-DEST_ACCOUNTID = os.getenv('DEST_ACCOUNT').strip().split(',')
+DEST_ACCOUNTID = [ A.strip() for A in os.getenv('DEST_ACCOUNT').split(',') ]
 PATTERN = os.getenv('PATTERN', 'ALL_INSTANCES')
 
 if os.getenv('REGION_OVERRIDE', 'NO') != 'NO':
